@@ -15,7 +15,7 @@ export function updateAuthorSuccess(author) {
 }
 
 export function deleteAuthorSuccess(author) {
-  return { type: types.DELETE_AUTHOR_SUCCESS, author }
+  return { type: types.DELETE_AUTHOR_SUCCESS, author };
 }
 
 export function loadAuthors() {

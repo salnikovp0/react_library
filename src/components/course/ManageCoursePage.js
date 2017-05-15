@@ -23,18 +23,18 @@ export class ManageCoursePage extends React.Component {
     this.routerWillLeave = this.routerWillLeave.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.course.id != nextProps.course.id) {
-      // Necessary to populate form when existing course is loaded directly.
-      this.setState({course: Object.assign({}, nextProps.course)});
-    }
-  }
-
   componentWillMount() {
     this.context.router.setRouteLeaveHook(
       this.props.route,
       this.routerWillLeave
     );
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.course.id != nextProps.course.id) {
+      // Necessary to populate form when existing course is loaded directly.
+      this.setState({course: Object.assign({}, nextProps.course)});
+    }
   }
 
   routerWillLeave() {

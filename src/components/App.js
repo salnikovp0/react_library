@@ -7,9 +7,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        {this.props.notFound ? 'gaga' : 'dada'}
         <Header
           loading={this.props.loading}
+          courses={this.props.courses}
         />
         {this.props.children}
       </div>
@@ -19,16 +19,13 @@ class App extends React.Component {
 
 App.propTypes = {
   children: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
-  notFound: PropTypes.bool
+  loading: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
-  debugger;
-
   return {
     loading: state.ajaxCallsInProgress > 0,
-    notFound: state.notFound
+    courses: state.courses
   };
 }
 

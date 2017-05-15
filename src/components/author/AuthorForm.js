@@ -43,7 +43,8 @@ AuthorForm.propTypes = {
   onSave: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   saving: PropTypes.bool,
-  errors: PropTypes.object
+  errors: PropTypes.object,
+  onDelete: PropTypes.func
 };
 
 export default AuthorForm;

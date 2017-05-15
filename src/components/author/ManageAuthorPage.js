@@ -22,7 +22,6 @@ export class ManageAuthorPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
     if (this.props.author.id !== nextProps.author.id) {
       // Necessary to populate form when existing course is loaded directly.
       this.setState({author: Object.assign({}, nextProps.author)});
